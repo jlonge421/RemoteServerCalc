@@ -3,26 +3,28 @@
 
 import socket
 
+#connecting to eustis3
 def start_client(server_ip='eustis3.eecs.ucf.edu', port=5234):
-    # Create a TCP/IP socket
+    # create the TCP IP sockeet
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    # Connect to the server
+    # Connect to da server
     client_socket.connect((server_ip, port))
     print(f"Connected with server on {server_ip}:{port}")
 
     while True:
-        # Get user input
+        # take input
         math_expression = input("Enter a math question (e.g., 20+10=): ")
 
-        # Send the input to the server
+        # ewww, math, send it off...
         client_socket.sendall(math_expression.encode('utf-8'))
 
-        # If the input is '0/0=', break and close the connection
+        # dividing by 0 is a cheat code in the universe, 
+        # but sv_cheats is set to 0 and protected by admin..
         if math_expression == "0/0=":
             break
 
-        # Receive and print the response from the server
+        # mmmmm, doughnuts..
         result = client_socket.recv(1024).decode('utf-8')
         print(f"Answer from server: {result}")
 
@@ -30,4 +32,31 @@ def start_client(server_ip='eustis3.eecs.ucf.edu', port=5234):
     client_socket.close()
 
 if __name__ == "__main__":
-    start_client(port=5234)  # Ensure port is the same as the server
+    start_client(port=5234) # grrrr
+
+#    |    _________
+#    |   /  mmmmm, \
+#    |   \doughnuts/   _
+#    |        O      _//\-\
+#    |         O    /      \
+#   _|_         o  /       |
+#  /   \         (.(.) /|\/
+# |  0  |         (___    ,)
+#  \___/          /   \   \
+#      _          \o  /   |
+#    _( \_         _| _____\
+#   (___  \_______/\_/______\
+#   (___         /    /    \|
+#   (___________/     |____||
+#              /      |    ||
+#             /_______|    |_\
+#             \      _|    | /
+#              |    (_     \/
+#              | \__  | | | |
+#              |    \ |_|_|_|
+#              |     |     |
+#              |     |     |
+#              |     |     |
+#              |_____|_____|
+#              |_____|_____|
+#             /     /      |
