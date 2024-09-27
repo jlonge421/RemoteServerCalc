@@ -3,7 +3,7 @@
 
 import socket
 
-def start_client(server_ip='eustis3.eecs.ucf.edu', port=5001):
+def start_client(server_ip='eustis3.eecs.ucf.edu', port=5234):
     # Create a TCP/IP socket
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -30,4 +30,4 @@ def start_client(server_ip='eustis3.eecs.ucf.edu', port=5001):
     client_socket.close()
 
 if __name__ == "__main__":
-    start_client(port=5001)  # Ensure port is the same as the server
+    start_client(port=5234)  # Ensure port is the same as the server

@@ -13,7 +13,7 @@ def process_math_expression(expression):
     except Exception as e:
         return "Input error. Re-type the math question again."
 
-def start_server(host='0.0.0.0', port=5001):
+def start_server(host='0.0.0.0', port=5234):
     # Create a TCP/IP socket
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
@@ -47,9 +47,9 @@ def start_server(host='0.0.0.0', port=5001):
         print(f"Sending back answer: {result}")
         conn.sendall(result.encode('utf-8'))
 
-    # Close the connection
+    # close connection
     conn.close()
     server_socket.close()
 
 if __name__ == "__main__":
-    start_server(port=5001)  # Ensure port is between 1024 and 65535
+    start_server(port=5234)
