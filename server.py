@@ -1,3 +1,5 @@
+# Alexander Lokhanov 9/27/24
+
 # This script will be server-side,
 # conducting math calculations
 
