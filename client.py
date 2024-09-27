@@ -32,7 +32,8 @@ def start_client(server_ip='eustis3.eecs.ucf.edu', port=5234):
     client_socket.close()
 
 if __name__ == "__main__":
-    start_client(port=5234) # grrrr
+    start_client(port=5234) 
+    # grrrr
 
 #    |    _________
 #    |   /  mmmmm, \
